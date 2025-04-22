@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đặt phòng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: #fff; color: #333; line-height: 1.6; }
+    header, footer { padding: 2rem; background-color: #0e1a26; color: white; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; }
+    nav ul { display: flex; list-style: none; gap: 2rem; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 500; }
+    nav .active { border-bottom: 2px solid #b58534; color: #b58534; }
+    .btn-booking { background-color: #b58534; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; }
+    .container { max-width: 1200px; margin: auto; padding: 2rem; }
+    .form-section { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+    .form-box, .room-box { background: #f9f9f9; padding: 2rem; border-radius: 10px; flex: 1; min-width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .form-box input, .form-box textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; }
+    .form-box label { font-weight: 600; display: block; margin-top: 1rem; }
+    .room-box img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
+    .room-box img:hover { transform: scale(1.05); }
+    .room-box h3 { margin-top: 1rem; }
+    .checkbox-group { margin-top: 2rem; }
+    .checkbox-group label { display: block; margin-bottom: 0.8rem; }
+    .submit-btn { margin-top: 2rem; width: 100%; background: #b58534; color: white; border: none; padding: 1rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    footer input { padding: 0.6rem; border-radius: 6px; border: none; width: 100%; max-width: 300px; }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-menu { list-style: none; margin-top: 1rem; }
+    .footer-menu li { margin-bottom: 0.5rem; color: #ddd; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>Logo</strong></div>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Room & Suites</a></li>
+      <li><a href="#">Restaurant & Bar</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <button class="btn-booking">Booking Room</button>
+  </nav>
+
+  <div class="container">
+    <h1>Đặt phòng ngay</h1>
+    <div class="form-section">
+      <div class="form-box">
+        <h3>Billing Details</h3>
+        <label>First Name</label>
+        <input type="text" placeholder="Input your First Name in Here">
+        <label>Last Name</label>
+        <input type="text" placeholder="Input your Last Name in Here">
+        <label>Email Address</label>
+        <input type="email" placeholder="Input your Email Address in Here">
+        <label>Phone Number</label>
+        <input type="text" placeholder="Input your Phone Number in Here">
+        <label>Passport Number (Optional)</label>
+        <input type="text" placeholder="Input your Passport Number in Here">
+        <label>Address</label>
+        <input type="text" placeholder="Input your Address in Here">
+
+        <div class="checkbox-group">
+          <h4>Dịch vụ phụ trợ</h4>
+          <label><input type="checkbox" checked> Đưa đón sân bay - 230.000 VND</label>
+          <label><input type="checkbox"> Activity - 230.000 VND</label>
+          <label><input type="checkbox"> Dịch vụ spa đa tác vụ - 230.000 VND</label>
+        </div>
+
+        <label>Special Request</label>
+        <textarea rows="4" placeholder="Input your Special Request in Here"></textarea>
+
+        <label><input type="checkbox"> Tôi đã đọc và đồng ý với thỏa thuận</label>
+        <button class="submit-btn">Hoàn tất giao dịch</button>
+      </div>
+
+      <div class="room-box">
+        <img src="ảnh1.avif" alt="Phòng cao cấp">
+        <h3>PHÒNG CAO CẤP</h3>
+        <p>14 February 2021</p>
+        <p>1 Room &nbsp;&nbsp;|&nbsp;&nbsp; 2 Guest &nbsp;&nbsp;|&nbsp;&nbsp; 1 Night</p>
+        <h2 style="margin-top: 1rem;">1.000.000 VND</h2>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-col">
+      <h3>If you have any question,<br>Let us help you!</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <input type="email" placeholder="Input your email here">
+    </div>
+    <div class="footer-col">
+      <ul class="footer-menu">
+        <li>Home</li>
+        <li>Room & Suites</li>
+        <li>Packages</li>
+        <li>Voucher</li>
+        <li>Promo</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <ul class="footer-menu">
+        <li>About Us</li>
+        <li>Restaurant & Bar</li>
+        <li>Events</li>
+        <li>Gallery</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <ul class="footer-menu">
+        <li>Our Team</li>
+        <li>Blog</li>
+        <li>Contact Us</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
