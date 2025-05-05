@@ -5,88 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Đặt phòng</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background-color: #fff; color: #333; line-height: 1.6; }
-    header, footer { padding: 2rem; background-color: #0e1a26; color: white; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; }
-    nav ul { display: flex; list-style: none; gap: 2rem; }
-    nav ul li a { text-decoration: none; color: #333; font-weight: 500; }
-    nav .active { border-bottom: 2px solid #b58534; color: #b58534; }
-    .btn-booking { background-color: #b58534; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; }
-    .container { max-width: 1200px; margin: auto; padding: 2rem; }
-    .form-section { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
-    .form-box, .room-box { background: #f9f9f9; padding: 2rem; border-radius: 10px; flex: 1; min-width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    .form-box input, .form-box textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; }
-    .form-box label { font-weight: 600; display: block; margin-top: 1rem; }
-    .room-box img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
-    .room-box img:hover { transform: scale(1.05); }
-    .room-box h3 { margin-top: 1rem; }
-    .checkbox-group { margin-top: 2rem; }
-    .checkbox-group label { display: block; margin-bottom: 0.8rem; }
-    .submit-btn { margin-top: 2rem; width: 100%; background: #b58534; color: white; border: none; padding: 1rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; }
-    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
-    footer input { padding: 0.6rem; border-radius: 6px; border: none; width: 100%; max-width: 300px; }
-    .footer-col { flex: 1; min-width: 200px; }
-    .footer-menu { list-style: none; margin-top: 1rem; }
-    .footer-menu li { margin-bottom: 0.5rem; color: #ddd; }
-  </style>
 </head>
+<link rel="stylesheet" href="style.css">
 <body>
+
   <nav>
     <div><strong>Logo</strong></div>
     <ul>
       <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">Room & Suites</a></li>
+      <li><a href="">Room & Suites</a></li>
       <li><a href="#">Restaurant & Bar</a></li>
-      <li><a href="#">Blog</a></li>
     </ul>
-    <button class="btn-booking">Booking Room</button>
+    <button class="btn-booking">Booking Tour</button>
   </nav>
 
+  
+</head>
+<body>
   <div class="container">
-    <h1>Đặt phòng ngay</h1>
-    <div class="form-section">
-      <div class="form-box">
-        <h3>Billing Details</h3>
-        <label>First Name</label>
-        <input type="text" placeholder="Input your First Name in Here">
-        <label>Last Name</label>
-        <input type="text" placeholder="Input your Last Name in Here">
-        <label>Email Address</label>
-        <input type="email" placeholder="Input your Email Address in Here">
-        <label>Phone Number</label>
-        <input type="text" placeholder="Input your Phone Number in Here">
-        <label>Passport Number (Optional)</label>
-        <input type="text" placeholder="Input your Passport Number in Here">
-        <label>Address</label>
-        <input type="text" placeholder="Input your Address in Here">
+    <h1>XÁC NHẬN THÔNG TIN TOUR</h1>
 
-        <div class="checkbox-group">
-          <h4>Dịch vụ phụ trợ</h4>
-          <label><input type="checkbox" checked> Đưa đón sân bay - 230.000 VND</label>
-          <label><input type="checkbox"> Activity - 230.000 VND</label>
-          <label><input type="checkbox"> Dịch vụ spa đa tác vụ - 230.000 VND</label>
-        </div>
+    <div class="card form-grid">
+      <input type="text" placeholder="Họ tên" />
+      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Số điện thoại" />
+      <input type="text" placeholder="Địa chỉ" />
+      <input type="text" placeholder="Số hộ chiếu (nếu có)" />
+    </div>
 
-        <label>Special Request</label>
-        <textarea rows="4" placeholder="Input your Special Request in Here"></textarea>
-
-        <label><input type="checkbox"> Tôi đã đọc và đồng ý với thỏa thuận</label>
-        <button class="submit-btn">Hoàn tất giao dịch</button>
+    <div class="card tour-info">
+      <div class="image-container">
+        <img src="./du-lich-ha-noi.jpg" alt="Tour Hà Nội" />
       </div>
-
-      <div class="room-box">
-        <img src="ảnh1.avif" alt="Phòng cao cấp">
-        <h3>PHÒNG CAO CẤP</h3>
-        <p>14 February 2021</p>
-        <p>1 Room &nbsp;&nbsp;|&nbsp;&nbsp; 2 Guest &nbsp;&nbsp;|&nbsp;&nbsp; 1 Night</p>
-        <h2 style="margin-top: 1rem;">1.000.000 VND</h2>
+      <div class="tour-details">
+        <h2>Tour Hà Nội</h2>
+        <label>Ngày khởi hành:
+          <input type="date" id="startDate" />
+        </label>
+        <label>Số người:
+          <input type="number" id="numPeople" min="1" placeholder="Nhập số người" />
+        </label>
+        <div id="totalPrice" class="price" style="display: none;"></div>
       </div>
     </div>
+    <div class="card">
+      <h3>Dịch vụ bổ sung</h3>
+      <label><input type="checkbox" value="pickup" /> Đưa đón tận nhà - 150.000 VND</label>
+      <label><input type="checkbox" value="insurance" /> Bảo hiểm du lịch - 100.000 VND</label>
+      <label><input type="checkbox" value="guide" /> Hướng dẫn viên riêng - 300.000 VND</label>
+      <textarea placeholder="Yêu cầu đặc biệt"></textarea>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+      <label for="confirmCheck" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; white-space: nowrap;">
+        <input type="checkbox" id="confirmCheck" />
+        Tôi xác nhận thông tin tour là chính xác
+      </label>
+    </div>
+    
+    <button id="confirmBtn">XÁC NHẬN ĐẶT TOUR</button>
   </div>
 
-  <footer>
+  <script>
+    const pricePerPerson = 1750000;
+    const startDateInput = document.getElementById('startDate');
+    const numPeopleInput = document.getElementById('numPeople');
+    const totalPriceDiv = document.getElementById('totalPrice');
+
+    function updatePrice() {
+      const startDate = startDateInput.value;
+      const numPeople = parseInt(numPeopleInput.value);
+      if (startDate && numPeople > 0) {
+        const total = numPeople * pricePerPerson;
+        totalPriceDiv.textContent = "Tổng giá: " + total.toLocaleString("vi-VN") + " VND";
+        totalPriceDiv.style.display = "block";
+      } else {
+        totalPriceDiv.style.display = "none";
+      }
+    }
+
+    startDateInput.addEventListener('input', updatePrice);
+    numPeopleInput.addEventListener('input', updatePrice);
+
+    document.getElementById('confirmBtn').addEventListener('click', function () {
+      const confirmCheck = document.getElementById('confirmCheck');
+      if (!confirmCheck.checked) {
+        alert('Vui lòng xác nhận thông tin trước khi đặt tour.');
+      } else {
+        alert('Thông tin tour đã được xác nhận thành công!');
+      }
+    });
+  </script>
+   <footer>
     <div class="footer-col">
       <h3>If you have any question,<br>Let us help you!</h3>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
