@@ -88,13 +88,44 @@
     numPeopleInput.addEventListener('input', updatePrice);
 
     document.getElementById('confirmBtn').addEventListener('click', function () {
-      const confirmCheck = document.getElementById('confirmCheck');
-      if (!confirmCheck.checked) {
-        alert('Vui lòng xác nhận thông tin trước khi đặt tour.');
-      } else {
-        alert('Thông tin tour đã được xác nhận thành công!');
-      }
-    });
+  const inputs = document.querySelectorAll('.form-grid input');
+  const startDate = startDateInput.value;
+  const numPeople = numPeopleInput.value;
+  const confirmCheck = document.getElementById('confirmCheck');
+
+  let valid = true;
+  let missingFields = [];
+
+  inputs.forEach(input => {
+    if (input.value.trim() === "") {
+      valid = false;
+      missingFields.push(input.placeholder);
+    }
+  });
+
+  if (!startDate) {
+    valid = false;
+    missingFields.push("Ngày khởi hành");
+  }
+
+  if (!numPeople || parseInt(numPeople) <= 0) {
+    valid = false;
+    missingFields.push("Số người");
+  }
+
+  if (!confirmCheck.checked) {
+    valid = false;
+    missingFields.push("Xác nhận thông tin");
+  }
+
+  if (!valid) {
+    alert("Vui lòng điền đầy đủ thông tin: " + missingFields.join(", "));
+  } else {
+    alert("Thông tin tour đã được xác nhận thành công!");
+  }
+});
+
+    
   </script>
    <footer class="footer">
     <div class="footer-newsletter">
